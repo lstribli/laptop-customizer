@@ -3,6 +3,7 @@ import './App.css';
 import Total from './total';
 import Customize from './customize';
 import Cart from './cart';
+import Summary from './Summary'
 
 
 export default class App extends React.Component {
@@ -78,7 +79,7 @@ export default class App extends React.Component {
   };
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     const { features } = this.state;
     const { selected } = this.state;
 
@@ -97,14 +98,9 @@ export default class App extends React.Component {
             />
           </form>
           <section className="main__summary">
-            <h2>Your cart</h2>
-            <Cart
+            <Summary
+              features={features}
               selected={selected} />
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <Total
-                selected={selected} />
-            </div>
           </section>
         </main>
       </div>
